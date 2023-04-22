@@ -17,8 +17,11 @@ await page.getByPlaceholder('Password').fill('secret_sauce');
 await page.locator('//*[@id="login-button"]').click();
 await page.locator('//*[@id="item_3_title_link"]').click();
     await page.locator('//*[@id="add-to-cart-test.allthethings()-t-shirt-(red)"]').click();
+    await page.pause();
     await page.locator('//*[@id="shopping_cart_container"]/a').click();
     await page.screenshot({ path: 'screenshot.png', fullPage: true });
     await expect(page.locator('//*[@id="item_3_title_link"]/div')).toBeVisible();
 
+   //Worked:await page.getByRole('button',{name:'Continue Shopping'}).click();
+    //Worked:await page.locator('//*[@id="continue-shopping"]').click();
 })
